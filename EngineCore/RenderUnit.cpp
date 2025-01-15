@@ -243,5 +243,4 @@ void URenderUnit::InputLayOutCreate()
 		Blob->GetBufferSize(),
 		&InputLayOut);
 
-	int a = 0;
 }

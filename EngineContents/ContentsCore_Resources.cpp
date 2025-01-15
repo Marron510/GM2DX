@@ -76,10 +76,16 @@ void UContentsCore::MyGSetting()
 
 	{
 		std::shared_ptr<UEngineMaterial> Mat = UEngineMaterial::Create("MyMaterial");
+
 		Mat->SetVertexShader("TestShader.fx");
 		Mat->SetPixelShader("TestShader.fx");
 	}
+	{
+		std::shared_ptr<UEngineMaterial> Mat = UEngineMaterial::Create("TestMaterial");
+		Mat->SetVertexShader("TestLevelShader.fx");
+		Mat->SetPixelShader("TestLevelShader.fx");
 
+	}
 	{
 		std::shared_ptr<UEngineMaterial> Mat = UEngineMaterial::Create("MyCollisionDebugMaterial");
 		Mat->SetVertexShader("EngineDebugCollisionShader.fx");

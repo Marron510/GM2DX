@@ -4,15 +4,23 @@
 MyCustomRenderer::MyCustomRenderer()
 {
 	CreateRenderUnit();
-	SetMesh("Rect");
-	SetMaterial("MyMaterial");
-
-	MyColor.Albedo = float4(1.0f, 1.0f, 1.0f, 1.0f);
-
-	GetRenderUnit().ConstantBufferLinkData("FMyColor", MyColor);
+	SetMesh("octagon");
+	SetMaterial("TestMaterial");
 }
 
 MyCustomRenderer::~MyCustomRenderer()
 {
 }
+
+void MyCustomRenderer::BeginPlay()
+{
+	URenderer::BeginPlay();
+}
+
+void MyCustomRenderer::Render(UEngineCamera* _Camera, float _DeltaTime)
+{
+	URenderer::Render(_Camera, _DeltaTime);
+
+}
+
 
