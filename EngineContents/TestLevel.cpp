@@ -39,7 +39,7 @@ void ATestLevel::BeginPlay()
 void ATestLevel::Tick(float _DeltaTime)
 {
 	AGameMode::Tick(_DeltaTime);
-	Render->AddWorldRotation(FVector{ 0.0f * _DeltaTime , 50.0f * _DeltaTime, 0.0f * _DeltaTime });
+	Render->AddWorldRotation(FVector{ 0.0f * _DeltaTime , 0.0f * _DeltaTime, 100.0f * _DeltaTime });
 	if (UEngineInput::IsDown('P'))
 	{
 		GetWorld()->GetMainCamera()->FreeCameraSwitch();
