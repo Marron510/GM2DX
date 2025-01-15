@@ -18,7 +18,7 @@ ATestLevel::ATestLevel()
 	
 	Render = CreateDefaultSubObject<MyCustomRenderer>();
 	Render->SetupAttachment(RootComponent);
-	Render->SetScale3D(FVector{ 100.0f, 100.0f, 100.0f });
+	Render->SetScale3D(FVector{ 500.0f, 500.0f, 500.0f });
 	
 	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
 	Camera->SetActorLocation({ 0.0f, 0.0f, -1000.0f, 1.0f });
