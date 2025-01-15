@@ -10,16 +10,16 @@
 #include <EngineCore/Collision.h>
 #include "MyCustomRenderer.h"
 #include <EngineCore/EngineCamera.h>
+#include <EngineCore/Actor.h>
+
+#include "Octagon.h"
 
 ATestLevel::ATestLevel()
 {
-	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
-	RootComponent = Default;
 	
-	Render = CreateDefaultSubObject<MyCustomRenderer>();
-	Render->SetupAttachment(RootComponent);
-	Render->SetScale3D(FVector{ 500.0f, 500.0f, 500.0f });
-	
+	Octagon = GetWorld()->SpawnActor<AOctagon>();
+
+
 	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
 	Camera->SetActorLocation({ 0.0f, 0.0f, -1000.0f, 1.0f });
 	Camera->GetCameraComponent()->SetZSort(0, true);
@@ -39,7 +39,8 @@ void ATestLevel::BeginPlay()
 void ATestLevel::Tick(float _DeltaTime)
 {
 	AGameMode::Tick(_DeltaTime);
-	Render->AddWorldRotation(FVector{ 0.0f * _DeltaTime , 0.0f * _DeltaTime, 100.0f * _DeltaTime });
+	Octagon->AddActorRotation(FVector{ 0.0f * _DeltaTime , 0.0f * _DeltaTime, 100.0f * _DeltaTime });
+
 	if (UEngineInput::IsDown('P'))
 	{
 		GetWorld()->GetMainCamera()->FreeCameraSwitch();

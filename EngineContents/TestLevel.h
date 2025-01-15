@@ -24,7 +24,7 @@ public:
 protected:
 
 private:
-	std::shared_ptr<class MyCustomRenderer> Render;
+	std::shared_ptr<class AOctagon> Octagon;
 
 };
 
